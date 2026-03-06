@@ -5,8 +5,8 @@ import CountryDetail from "./CountryDetail";
 function App() {
   return (
     <Router>
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-6 text-center">
+      <div className="container mx-auto p-2">
+        <h1 className="text-5xl font-extrabold mb-4 text-right">
           Дэлхийн Улсууд
         </h1>
 

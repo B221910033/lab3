@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 50;
 
 export default function CountryList() {
   const [countries, setCountries] = useState([]);
@@ -50,10 +50,10 @@ export default function CountryList() {
         placeholder="Улсын нэрээр хайх..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full p-3 mb-6 border rounded-lg"
+        className="w-full p-3 mb-2 border rounded-lg"
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-6">
         {visibleCountries.map((country) => (
           <Link
             key={country.cca2}
@@ -70,12 +70,13 @@ export default function CountryList() {
               </h2>
               <p>Нийслэл: {country.capital?.[0] || "-"}</p>
               <p>Хүн ам: {country.population.toLocaleString()}</p>
+           
             </div>
           </Link>
         ))}
       </div>
 
-      <div className="flex justify-center mt-6 gap-2">
+      <div className="flex justify-center mt-5 gap-2">
         <button onClick={() => setCurrentPage(currentPage - 1)}>
           Өмнөх
         </button>
